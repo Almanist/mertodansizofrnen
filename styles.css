@@ -1,19 +1,75 @@
 /* Temel Stiller */
+:root {
+    --primary: #6c5ce7;
+    --primary-dark: #5649c0;
+    --secondary: #00cec9;
+    --dark: #2d3436;
+    --light: #f5f6fa;
+    --white: #ffffff;
+    --gray: #b2bec3;
+    --error: #ff7675;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
     line-height: 1.6;
 }
 
 .hidden {
     display: none !important;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Butonlar */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+#admin-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#admin-btn:hover {
+    background-color: var(--primary-dark);
 }
 
 /* Modal */
@@ -31,25 +87,37 @@ body {
 }
 
 .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
+    background-color: var(--white);
+    border-radius: 10px;
     width: 90%;
     max-width: 500px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    box-shadow: var(--shadow);
 }
 
-#admin-modal .modal-content {
-    text-align: center;
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
 }
 
-input, textarea, button {
+/* Form Elemanları */
+input, textarea {
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.8rem 1rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
 }
 
 textarea {
@@ -57,35 +125,26 @@ textarea {
     resize: vertical;
 }
 
-button {
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #5649c0;
-}
-
 .error {
-    color: #e74c3c;
+    color: var(--error);
+    font-size: 0.9rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 /* Medya Önizleme */
-.preview-container {
+.media-preview {
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #media-preview {
-    max-width: 100%;
+    width: 100%;
     max-height: 300px;
+    object-fit: contain;
     display: block;
-    margin: 0 auto;
 }
 
 #remove-media {
@@ -94,55 +153,85 @@ button:hover {
     right: 10px;
     width: 30px;
     height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
 }
 
-/* Butonlar */
+/* Buton Grupları */
 .buttons {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
+}
+
+.upload-btn, #publish-btn, #admin-login-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .upload-btn {
-    background: #00cec9;
-    text-align: center;
-    cursor: pointer;
+    background-color: var(--light);
+    border: 1px dashed var(--gray);
 }
 
 .upload-btn:hover {
-    background: #00a8a8;
+    background-color: #e0e0e0;
 }
 
-/* Galeri */
-.container {
+#publish-btn, #admin-login-btn {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+#publish-btn:hover, #admin-login-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Ana İçerik */
+.main-content {
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
 }
 
-h1 {
-    text-align: center;
+.content-header {
     margin-bottom: 2rem;
-    color: #6c5ce7;
 }
 
-.gallery {
+.content-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Medya Galerisi */
+.media-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
 .media-item {
-    background: white;
-    border-radius: 8px;
+    background-color: var(--white);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .media-thumbnail {
@@ -156,29 +245,51 @@ h1 {
 }
 
 .media-title {
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .media-desc {
-    color: #666;
-    margin-bottom: 1rem;
+    color: var(--gray);
     font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .media-footer {
     display: flex;
     justify-content: space-between;
-    color: #999;
     font-size: 0.8rem;
+    color: var(--gray);
     padding-top: 0.5rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--light);
 }
 
 .admin-badge {
-    background: #6c5ce7;
-    color: white;
+    background-color: var(--primary);
+    color: var(--white);
     padding: 0.2rem 0.5rem;
-    border-radius: 3px;
+    border-radius: 4px;
     font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .media-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .upload-btn, #publish-btn {
+        width: 100%;
+    }
 }
