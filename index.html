@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizofrenlendin Medya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Gizli Admin Modalı -->
+    <div id="admin-modal" class="modal hidden">
+        <div class="modal-content">
+            <input type="password" id="admin-password" placeholder="Şifre" autocomplete="off">
+            <button id="admin-login">Giriş</button>
+            <p id="admin-error" class="error hidden">Hatalı şifre!</p>
+        </div>
+    </div>
+
+    <!-- Medya Yükleme Modalı -->
+    <div id="upload-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Medya Yükle</h2>
+            <div class="preview-container hidden">
+                <img id="media-preview" src="#" alt="Önizleme">
+                <button id="remove-media">×</button>
+            </div>
+            <input type="text" id="media-title" placeholder="Başlık">
+            <textarea id="media-desc" placeholder="Açıklama"></textarea>
+            <div class="buttons">
+                <label for="media-upload" class="upload-btn">Dosya Seç</label>
+                <input type="file" id="media-upload" accept="image/*,video/*" class="hidden">
+                <button id="publish-btn">Yayınla</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana İçerik -->
+    <div class="container">
+        <h1>Sizofrenlendin Medya</h1>
+        <div id="media-gallery" class="gallery">
+            <!-- Medyalar buraya eklenecek -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
