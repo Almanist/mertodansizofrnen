@@ -293,3 +293,43 @@ textarea {
         width: 100%;
     }
 }
+
+/* Önceki stillere ek olarak */
+
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray);
+    font-size: 1.2rem;
+}
+
+.loading i {
+    margin-right: 0.5rem;
+}
+
+#refresh-btn {
+    background: var(--secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+#refresh-btn:hover {
+    background: #00a8a8;
+}
+
+.media-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray);
+}
+
+.media-empty i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
