@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sizofrenlendin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMwlJa5HTEsWChad6ZTGOMLUxGQj71bArZcQ&s" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -53,9 +53,13 @@
         <main class="main-content">
             <div class="content-header">
                 <h2><i class="fas fa-images"></i> Medya Paylaşımları</h2>
+                <button id="refresh-btn"><i class="fas fa-sync-alt"></i> Yenile</button>
             </div>
             <div id="media-container" class="media-container">
                 <!-- Medyalar buraya eklenecek -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Yükleniyor...
+                </div>
             </div>
         </main>
     </div>
