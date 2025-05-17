@@ -3,43 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sizofrenlendin Medya</title>
+    <title>Sizofrenlendin | Medya Paylaşım</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Gizli Admin Modalı -->
+    <!-- Admin Giriş Modalı -->
     <div id="admin-modal" class="modal hidden">
         <div class="modal-content">
-            <input type="password" id="admin-password" placeholder="Şifre" autocomplete="off">
-            <button id="admin-login">Giriş</button>
+            <h2><i class="fas fa-lock"></i> Admin Girişi</h2>
+            <input type="password" id="admin-password" placeholder="Admin şifresini girin" autocomplete="off">
             <p id="admin-error" class="error hidden">Hatalı şifre!</p>
+            <button id="admin-login-btn"><i class="fas fa-sign-in-alt"></i> Giriş Yap</button>
         </div>
     </div>
 
     <!-- Medya Yükleme Modalı -->
-    <div id="upload-modal" class="modal hidden">
+    <div id="media-modal" class="modal hidden">
         <div class="modal-content">
-            <h2>Medya Yükle</h2>
-            <div class="preview-container hidden">
+            <h2><i class="fas fa-cloud-upload-alt"></i> Medya Paylaş</h2>
+            <div class="media-preview hidden">
                 <img id="media-preview" src="#" alt="Önizleme">
-                <button id="remove-media">×</button>
+                <button id="remove-media"><i class="fas fa-times"></i></button>
             </div>
             <input type="text" id="media-title" placeholder="Başlık">
             <textarea id="media-desc" placeholder="Açıklama"></textarea>
             <div class="buttons">
-                <label for="media-upload" class="upload-btn">Dosya Seç</label>
+                <label for="media-upload" class="upload-btn"><i class="fas fa-image"></i> Dosya Seç</label>
                 <input type="file" id="media-upload" accept="image/*,video/*" class="hidden">
-                <button id="publish-btn">Yayınla</button>
+                <button id="publish-btn"><i class="fas fa-paper-plane"></i> Paylaş</button>
             </div>
         </div>
     </div>
 
-    <!-- Ana İçerik -->
-    <div class="container">
-        <h1>Sizofrenlendin Medya</h1>
-        <div id="media-gallery" class="gallery">
-            <!-- Medyalar buraya eklenecek -->
-        </div>
+    <!-- Ana Uygulama -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1 class="logo">Sizofrenlendin</h1>
+            </div>
+            <div class="header-right">
+                <button id="admin-btn"><i class="fas fa-user-shield"></i> Admin Girişi</button>
+            </div>
+        </header>
+
+        <!-- Ana İçerik -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2><i class="fas fa-images"></i> Medya Paylaşımları</h2>
+            </div>
+            <div id="media-container" class="media-container">
+                <!-- Medyalar buraya eklenecek -->
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
